@@ -29,9 +29,10 @@
     <h1>符文封印 / Rune Seal 隐私政策</h1>
     <p class="meta">开发者 / Developer: <strong>Postcard Routes Studio</strong><br>
       软件包 / Package: <code>com.postcardroutes.game</code><br>
-      生效及最后更新 / Effective and last updated: 2026-08-22</p>
-    <p class="summary">游戏进度只保存在设备上；Google Mobile Ads 和 UMP 会为广告与同意管理处理特定数据。<br>
-      Gameplay progress stays on the device; Google Mobile Ads and UMP process specified data for advertising and consent management.</p>
+      生效日期 / Effective date: 2026-08-22<br>
+      最后更新 / Last updated: 2026-09-17</p>
+    <p class="summary">游戏进度只保存在设备上；Google Mobile Ads、UMP 及玩家主动允许后启用的 Firebase Analytics 会处理本政策列出的数据。<br>
+      Gameplay progress stays on the device; Google Mobile Ads, UMP, and opt-in Firebase Analytics process the data listed in this policy.</p>
     <nav aria-label="Language"><a href="#zh">中文</a><a href="#en" lang="en">English</a></nav>
   </header>
 
@@ -44,6 +45,9 @@
     <h3>Google 广告服务数据</h3>
     <p>游戏接入 Google Mobile Ads（AdMob）SDK 和 Google User Messaging Platform（UMP）。Google 可能自动收集或共享 IP 地址（并推断大致位置）、应用启动和广告互动、崩溃及性能诊断信息，以及 Android 广告 ID、应用集 ID 等设备或账号标识符，用于广告投放与个性化、频次控制、衡量、分析、防欺诈、安全和合规。实际处理受地区、同意选择、设备设置和 Google 政策影响。</p>
     <p>详细说明见 <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=zh-cn">Google Mobile Ads SDK 数据披露</a>和 <a href="https://policies.google.com/privacy?hl=zh-CN">Google 隐私权政策</a>。我们不会通过广告获得玩家的真实姓名、通讯录、短信、聊天内容或精确位置，也不会把本地关卡进度提供给广告平台。</p>
+    <h3>可选的 Firebase Analytics 匿名使用分析</h3>
+    <p>只有在玩家明确选择“允许匿名分析”后，游戏才会启用 Google Firebase Analytics。它可能处理随机应用实例 ID、由掩码 IP 推断的大致地区、设备和系统信息、应用启动和会话，以及关卡开始/完成/失败、操作次数、分数和广告奖励结果等自定义事件，用于衡量推广来源、留存、关卡体验和广告效果。</p>
+    <p>我们不会向 Firebase 发送姓名、邮箱、聊天或自由文本、精确位置或本地存档。Firebase Analytics 的广告 ID 收集、广告存储、广告用户数据和广告个性化均已关闭；推广归因使用 Google Play Install Referrer。拒绝不影响游戏或广告，玩家可在“设置 → 隐私政策”中随时关闭；关闭后停止收集并重置设备上的分析数据。详情见 <a href="https://support.google.com/firebase/answer/6318039?hl=zh-Hans">Firebase 数据收集说明</a>。</p>
     <h2>2. 广告形式与选择</h2>
     <ul>
       <li>激励广告只在玩家主动选择后请求，Google 确认奖励后才发放礼包或续关奖励。</li>
@@ -52,10 +56,10 @@
     </ul>
     <p>适用地区会显示 UMP 隐私或同意界面；需要时可从“设置 → 广告隐私选项”重新打开。玩家也可通过 <a href="https://myadcenter.google.com/?hl=zh-CN">Google 我的广告中心</a>管理广告选择。拒绝个性化广告不一定移除全部广告；Google 仍可能提供非个性化或受限广告并处理安全、防欺诈等必要数据。</p>
     <h2>3. 第三方、权限与安全</h2>
-    <p>当前联网第三方服务为 Google Mobile Ads 和 UMP。数据会为上述目的传送给 Google 及其广告技术合作方。我们不出售个人数据，也不向数据经纪商提供玩家数据。当前版本未接入账号、支付、云存档、Firebase Analytics、Unity Analytics、Unity Ads、Sentry 或开发者自建分析服务。</p>
-    <p><code>INTERNET</code> 用于广告和同意界面，<code>VIBRATE</code> 仅用于玩家开启的触感；广告 SDK 可能声明广告 ID 权限。应用不请求相机、麦克风、通讯录、短信、通话记录、通知或精确位置权限。Google 表示 Mobile Ads SDK 使用 TLS 加密传输数据。</p>
+    <p>当前联网第三方服务为 Google Mobile Ads、UMP，以及玩家主动允许后启用的 Google Firebase Analytics。数据会为上述广告、同意管理、归因、衡量、分析和安全目的传送给 Google 及其广告技术合作方。我们不出售个人数据，也不向数据经纪商提供玩家数据。当前版本未接入账号、支付、云存档、Unity Analytics、Unity Ads、Sentry 或开发者自建分析服务。</p>
+    <p><code>INTERNET</code> 和 <code>ACCESS_NETWORK_STATE</code> 用于加载广告与同意界面并判断网络状态；<code>VIBRATE</code> 仅用于玩家开启的触感；<code>AD_ID</code> 用于广告投放、衡量和防欺诈。Google 广告 SDK 还会声明 Android Privacy Sandbox 的广告 ID、归因和 Topics 权限，实际使用受 Android 版本、Google 服务、地区、同意和设备设置影响。Unity 或 Google SDK 依赖会声明 <code>WAKE_LOCK</code> 和 <code>FOREGROUND_SERVICE</code>，用于必要的运行时或广告任务，不会让开发者读取额外的本地游戏进度或敏感内容。AndroidX 的应用内签名权限只限制动态广播接收器。应用不请求相机、麦克风、通讯录、短信、通话记录、通知或精确位置权限。Google 表示 Mobile Ads SDK 使用 TLS 加密传输数据。</p>
     <h2>4. 保存、删除与控制</h2>
-    <p>本地数据会保留到玩家清除应用数据或卸载游戏为止，可通过 Android“应用信息 → 存储 → 清除数据”删除。我们没有服务器副本，无法远程删除、恢复或导出本地数据。Google 依其政策和玩家设置管理广告数据；玩家可重置或删除 Android 广告 ID，并使用 Google 账号隐私工具或“我的广告中心”。</p>
+    <p>本地数据会保留到玩家清除应用数据或卸载游戏为止，可通过 Android“应用信息 → 存储 → 清除数据”删除。我们没有服务器副本，无法远程删除、恢复或导出本地数据。Google 依其政策和玩家设置管理广告及 Firebase Analytics 数据；玩家可在游戏中停用匿名分析并重置设备上的 Firebase 分析数据，也可重置或删除 Android 广告 ID，并使用 Google 账号隐私工具或“我的广告中心”。Google 表示相关 SDK 数据使用 TLS 加密传输。</p>
     <h2>5. 儿童隐私与国际处理</h2>
     <p>本游戏面向一般成年休闲益智玩家，并非专门面向儿童。我们不会故意收集 13 岁以下儿童（或当地法律规定的更高最低年龄）的个人数据；在完成相应合规评估前，不会选择 13 岁以下 Google Play 目标受众。Google 可能在玩家所在国家或地区之外处理广告数据，并采用其隐私政策说明的保障措施。</p>
     <h2>6. 联系与更新</h2>
@@ -71,6 +75,9 @@
     <h3>Google advertising data</h3>
     <p>The game integrates Google Mobile Ads (AdMob) and Google User Messaging Platform (UMP). Google may automatically collect or share IP address (and estimate general location), app launches and ad interactions, crash and performance diagnostics, Android advertising ID, app set ID, and other device or account identifiers. Purposes may include ad delivery and personalization, frequency capping, measurement, analytics, fraud prevention, security, and compliance. Processing depends on region, consent, device settings, and Google policies.</p>
     <p>See the <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Google Mobile Ads SDK disclosure</a> and <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. We do not receive a player's real name, contacts, messages, chat content, or precise location through the ads, and do not provide local level progress to the ad platform.</p>
+    <h3>Optional anonymous usage analytics with Firebase Analytics</h3>
+    <p>Google Firebase Analytics is enabled only after the player explicitly chooses Allow Anonymous Analytics. It may process a random app-instance ID, approximate region inferred from a masked IP address, device and operating-system information, app launches and sessions, and custom events such as level starts, completions or failures, move counts, scores, and rewarded-ad results. We use this to measure acquisition sources, retention, level experience, and advertising performance.</p>
+    <p>We do not send Firebase a name, email address, chat or other free text, precise location, or local-save content. Firebase Analytics advertising-ID collection, ad storage, ad user data, and ad personalization are disabled; campaign attribution uses Google Play Install Referrer. Declining does not affect gameplay or advertising. Players can disable analytics at any time under Settings → Privacy Policy; collection then stops and on-device analytics data is reset. See <a href="https://support.google.com/firebase/answer/6318039">Firebase data collection</a>.</p>
     <h2>2. Advertising and choice</h2>
     <ul>
       <li>Rewarded ads are requested only after a player chooses to watch one; gifts are granted only after Google confirms the reward.</li>
@@ -79,10 +86,10 @@
     </ul>
     <p>Where required, UMP presents a privacy or consent message and can be reopened from Settings → Ad privacy options. Players can also use <a href="https://myadcenter.google.com/">My Ad Center</a>. Refusing personalized ads does not necessarily remove all ads; Google may still provide non-personalized or limited ads and process data needed for security and fraud prevention.</p>
     <h2>3. Third parties, permissions, and security</h2>
-    <p>The current networked third parties are Google Mobile Ads and UMP. Information is transmitted to Google and its ad-technology partners for the stated purposes. We do not sell personal data or provide it to data brokers. The current release has no player accounts, payments, cloud saves, Firebase Analytics, Unity Analytics, Unity Ads, Sentry, or developer-operated analytics.</p>
-    <p><code>INTERNET</code> loads ads and consent interfaces; <code>VIBRATE</code> supports player-enabled haptics; the ad SDK may declare advertising-ID permissions. The app does not request camera, microphone, contacts, SMS, call-log, notification, or precise-location permissions. Google states that the Mobile Ads SDK encrypts data in transit using TLS.</p>
+    <p>The current networked third parties are Google Mobile Ads, UMP, and Google Firebase Analytics when the player opts in. Information is transmitted to Google and its ad-technology partners for advertising, consent management, attribution, measurement, analytics, and security. We do not sell personal data or provide it to data brokers. The current release has no player accounts, payments, cloud saves, Unity Analytics, Unity Ads, Sentry, or developer-operated analytics.</p>
+    <p><code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code> load ads and consent interfaces and check network state; <code>VIBRATE</code> supports player-enabled haptics; <code>AD_ID</code> supports ad delivery, measurement, and fraud prevention. The Google advertising SDK also declares Android Privacy Sandbox permissions for ad ID, attribution, and Topics; actual use depends on the Android version, Google services, region, consent, and device settings. Unity or Google SDK dependencies declare <code>WAKE_LOCK</code> and <code>FOREGROUND_SERVICE</code> for required runtime or advertising tasks; these permissions do not give the developer additional local game progress or sensitive content. An AndroidX app-signature permission only restricts dynamic broadcast receivers. The app does not request camera, microphone, contacts, SMS, call-log, notification, or precise-location permissions. Google states that the Mobile Ads SDK encrypts data in transit using TLS.</p>
     <h2>4. Retention, deletion, and controls</h2>
-    <p>Local data remains until the player clears app storage or uninstalls the game and can be removed through Android App info → Storage → Clear data. We have no server copy to delete, restore, or export. Google controls advertising-data retention under its policies and player settings; players can reset or delete the Android advertising ID and use Google privacy tools or My Ad Center.</p>
+    <p>Local data remains until the player clears app storage or uninstalls the game and can be removed through Android App info → Storage → Clear data. We have no server copy to delete, restore, or export. Google controls advertising and Firebase Analytics data under its policies and player settings. Players can disable anonymous analytics in the game and reset on-device Firebase analytics data, reset or delete the Android advertising ID, and use Google privacy tools or My Ad Center. Google states that the relevant SDK data is encrypted in transit using TLS.</p>
     <h2>5. Children and international processing</h2>
     <p>Rune Seal is intended for a general adult casual-puzzle audience and is not directed to children. We do not knowingly collect personal data from children under 13 or a higher local minimum age and will not select a Google Play audience below 13 without a separate compliance review. Google may process ad information outside the player's country or region using safeguards described in its privacy policy.</p>
     <h2>6. Contact and changes</h2>
